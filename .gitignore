@@ -31,7 +31,17 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
+.env.local
+.env.production
 .env*.local
 
 # typescript
 *.tsbuildinfo
+
+# Firebase emulator data (선택적)
+.firebase/
+
+# Editor / IDE settings
+.vscode/
+.idea/
