@@ -1,39 +1,11 @@
 # === Line Ending Settings ===
 # Ensure consistent line endings across different operating systems.
-# Text files will be normalized to LF (Line Feed) when committed,
-# and converted to the system's native line ending (CRLF on Windows, LF on others)
-# when checked out.
+# Text files will be normalized to the system's native line ending (CRLF on Windows, LF on others)
+# when checked out. When committed, Git will attempt to normalize them to LF,
+# unless specific overrides are given or core.autocrlf is set to 'true'.
 
-# Auto detect text files and normalize them.
-# Git will try to guess if a file is text or binary.
+# Auto detect text files and normalize them based on core.autocrlf setting.
 * text=auto
-
-# Explicitly declare common text files to always use LF line endings in the repository.
-# This overrides 'text=auto' for these specific types, ensuring consistency.
-*.js text eol=lf
-*.jsx text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf
-*.json text eol=lf
-*.md text eol=lf
-*.css text eol=lf
-*.html text eol=lf
-*.scss text eol=lf
-*.vue text eol=lf
-*.yml text eol=lf
-*.yaml text eol=lf
-*.xml text eol=lf
-*.sh text eol=lf
-*.env text eol=lf
-.gitignore text eol=lf
-.editorconfig text eol=lf
-.prettierrc text eol=lf
-.eslintrc text eol=lf
-.vscode/* text eol=lf # Ensure VS Code settings also use LF
-
-# Declare files that must always use CRLF line endings (primarily for Windows batch scripts)
-# Use this only if you specifically need CRLF for certain files.
-# *.bat text eol=crlf
 
 # === Binary Files ===
 # Declare specific files as binary to prevent Git from attempting line ending conversions
@@ -57,6 +29,7 @@
 *.ttf binary
 *.eot binary
 *.otf binary
+
 # === Git LFS (Large File Storage) Settings ===
 # If you plan to manage large files (e.g., high-res images, videos, large datasets)
 # using Git LFS, uncomment and configure these lines.
